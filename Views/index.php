@@ -7,23 +7,32 @@
     <title>Iniciar sesión</title>
   </head>
   <body>
-    <div class="ring">
-    <i style="--clr:#d7ff0d;"></i>
-    <i style="--clr:#d40000;"></i>
-    <i style="--clr:#19197b;"></i>
-    <div class="login">
-      <h2>Iniciar Sesión</h2>
-      <div class="inputBx">
-        <input type="text" placeholder="Usuario">
-      </div>
-      <div class="inputBx">
-        <input type="password" placeholder="Contraseña">
-      </div>
-      <div class="inputBx">
-        <input type="submit" value="Iniciar">
-      </div>
+  <div class="container">
+        <h1>Iniciar sesión</h1>
+        <form id="frmLogin">
+            <div class="input-field">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name = "usuario" required>
+            </div>
+            <div class="input-field">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name = "clave" required>
+            </div>
+            <button class="btn" type="submit" onclick="frmLogin(event);">Login</button>
+        </form>
     </div>
-  </div>
+            <script src="<?php echo base_url; ?>Assets/js/scripts.js"></script>
+            <script>
+              const base_url = "<?php echo base_url; ?>";
+            </script>
+            <script src="<?php echo base_url; ?>Assets/js/funciones.js"></script>
+    <script>
+    const container = document.querySelector('.container');
+
+window.onload = () => {
+    container.style.opacity = '1';
+}
+</script>
 
   </body>
 </html>

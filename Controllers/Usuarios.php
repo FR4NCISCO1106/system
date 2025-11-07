@@ -4,6 +4,11 @@ class Usuarios extends Controller{
   {
     print_r($this->model->getUsuario());
   }
+  public function validar()
+  {
+    print_r($_POST);
+    die();
+  }
 }
 
 ?>

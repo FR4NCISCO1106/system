@@ -1,127 +1,289 @@
-/* Importación de la fuente */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
 }
 
 body {
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #111;
-    width: 100%;
-    overflow: hidden;
 }
 
-/* Estilos del Anillo Giratorio */
-.ring {
-    position: relative;
-    width: 500px;
-    height: 500px;
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ring i {
-    position: absolute;
-    inset: 0;
-    border: 2px solid #fff;
-    transition: 0.5s;
-}
-
-.ring i:nth-child(1) {
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    animation: animate 6s linear infinite;
-}
-
-.ring i:nth-child(2) {
-    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-    animation: animate 4s linear infinite;
-}
-
-.ring i:nth-child(3) {
-    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-    animation: animate2 10s linear infinite;
-}
-
-.ring:hover i {
-    border: 6px solid var(--clr);
-    filter: drop-shadow(0 0 20px var(--clr));
-}
-
-@keyframes animate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes animate2 {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
-}
-
-/* Estilos del Formulario de Login */
-.login {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
 }
 
-.login h2 {
-    font-size: 2em;
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #eee;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    background-color: #ddd;
+}
+
+.btn {
+    padding: 12px 32px;
+    background-color: #0077ff;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005eff;
+}
+
+input[type="submit"], button {
+    margin-top: 24px;
+}
+
+/* Animaciones */
+
+.container {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0077ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
     color: #fff;
 }
 
-.login .inputBx {
-    position: relative;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+input[type="text"], input[type="password"] {
     width: 100%;
-}
-
-.login .inputBx input {
-    position: relative;
-    width: 100%;
-    padding: 12px 20px;
-    background: transparent;
-    border: 4px solid #fff;
-    border-radius: 50px;
-    font-size: 1.2em;
-    color: #fff; /* Texto en blanco en los campos de usuario/contraseña */
-    box-shadow: none;
-    outline: none;
-    font-size: 20px;
-    font-weight: 700;
-    transition: border-color 0.5s, box-shadow 0.5s;
-}
-
-.login .inputBx input::placeholder {
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 300;
-}
-
-/* Estilo específico para el botón Iniciar */
-.login .inputBx input[type="submit"] {
-    background: linear-gradient(45deg, #09ff2a, #029f60);
-    color: #111; /* Color de texto oscuro para contraste */
+    padding: 12px;
+    border-radius: 8px;
     border: none;
-    cursor: pointer;
-    
-    /* Transición para el efecto hover */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
-/* EFECTO HOVER: Agrandar y añadir sombra */
-.login .inputBx input[type="submit"]:hover {
-    transform: scale(1.08); /* Agranda el botón un 8% */
-    box-shadow: 0 0 20px rgb(255, 255, 255); /* Sombra brillante verde */
+input[type="text"]:focus, input[type="password"]:focus {
+    background-color: #ddd;
 }
+
+.btn {
+    padding: 12px 32px;
+    background-color: #fff;
+    color: #0077ff;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #eee;
+}
+
+input[type="submit"], button {
+    margin-top: 24px;
+}
+
+/* Animaciones */
+
+.container {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0077ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    font-size: 30px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    background-color: #ddd;
+}
+
+.btn {
+    padding: 12px 32px;
+    background-color: #fff;
+    color: #0077ff;
+    border-radius: 50px;
+    border: none;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555252;
+}
+
+input[type="submit"], button {
+    margin-top: 24px;
+}
+
+/* Animaciones */
+
+.container {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

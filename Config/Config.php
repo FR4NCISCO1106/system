@@ -1,8 +1,8 @@
 <?php
-const base_url = "http://localhost/system/";
+const base_url = "http://localhost/system/"; 
 const host = "localhost";
 const user = "root";
 const pass = "";
-const db = "rabsa";
+const db = "sistema";
 const charset = "charset=utf8";
 ?>
