@@ -4,13 +4,15 @@ class UsuariosModel extends Query{
   {
     parent::__construct();
   }
+  
   public function getUsuario(string $usuario, string $clave)
   {
-    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND clave = '$clave'";
-    $data = $this->select($sql);
+    // SEGURIDAD: Usamos '?' para los valores, en lugar de concatenar
+    $sql = "SELECT * FROM usuarios WHERE usuario = ? AND clave = ?"; 
+    
+    // Pasamos los valores de forma segura al método select
+    $data = $this->select($sql, [$usuario, $clave]); 
     return $data;
   }
 }
-
-
 ?>

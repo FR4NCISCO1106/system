@@ -9,6 +9,7 @@
   <body>
   <div class="container">
         <h1>Iniciar sesión</h1>
+        <div id="alertaLogin">
         <form id="frmLogin">
             <div class="input-field">
                 <label for="usuario">Usuario</label>
@@ -33,6 +34,6 @@ window.onload = () => {
     container.style.opacity = '1';
 }
 </script>
-
+</div>
   </body>
 </html>
